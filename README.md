@@ -17,30 +17,44 @@ Helper functions to calculate all sorts of things
 
  ### 2DVectors (Vectors.h)
 
-  - **Vector2 vec_sub(Vector2 A, Vector2 B)**
-  - **Vector2 vec_add(Vector2 A, Vector2 B)**
-  - **Vector2 vec_mul(Vector2 A,double scalar)**
-    - **Vector2 vec_dot(Vector2 A, Vector2 B)**
+  *Returns a vector*
+  
+**Vector2 vec_from_angle_deg(double angle, double magnitude);**
+**Vector2 vec_from_angle_rad(double angle, double magnitude);**
 
-    *Returns a vector that is the result of basic math operations*
+*Returns a vector that is the result og basic math operations*
 
-  - **Vector2 vec_rot_deg(Vector2 vec, double rot_angle)**
-  - **Vector2 vec_rot_rad(Vector2 vec, double rot_angle)**
+ - **Vector2 vec_sub(Vector2 a, Vector2 b);**
+ - **Vector2 vec_add(Vector2 a, Vector2 b);**
+ - **Vector2 vec_mult(Vector2 a, double scalar);**
 
-    *Returns a Vector that is the result of a rotation by the given angle (in degrees or radians)*
+ - **double vec_dot(Vector2 a, Vector2 b);**
 
-  - **Vector2 vec_invert(Vector2 vec)**
+*Returns the angle between two vectors*
 
-    *Returns a vector that is opposite to the one given*
+ - **double vec_angle_rad(Vector2 a, Vector2 b);**
+ - **double vec_angle_deg(Vector2 a, Vector2 b);**
 
-  - **double vec_magnitude(Vector2 vec)**
+*Returns a Vector that is the result of a rotation by the given angle (in degrees or radians)*
 
-    *Returns the magnitude of a vector*
+ - **Vector2 vec_rot_deg(Vector2 vec, double rot_angle);**
+ - **Vector2 vec_rot_rad(Vector2 vec, double rot_angle);**
 
-  - **double vec_heading_deg(Vector2 vec)**
-  - **double vec_heading_rad(Vector2 vec)**
+*Returns a vector that is opposite to the one given*
 
-    *Returns the angle of a vector relative to the x axis
+ - **Vector2 vec_invert(Vector2 vec);**
+
+*Returns the magnitude of a vector*
+
+ - **double vec_magnitude(Vector2 vec);**
+
+*Returns the angle of a vector relative to the x axis*
+
+ - **double vec_heading_deg(Vector2 vec);**
+ - **double vec_heading_rad(Vector2 vec);**
+
+ - **double vec_heading360_deg(Vector2 vec);**
+ - **double vec_heading360_rad(Vector2 vec);**
 
     ###TODO
 
