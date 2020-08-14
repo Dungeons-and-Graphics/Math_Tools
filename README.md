@@ -19,8 +19,8 @@ Helper functions to calculate all sorts of things
 
   - **Vector2 vec_sub(Vector2 A, Vector2 B)**
   - **Vector2 vec_add(Vector2 A, Vector2 B)**
-  - **Vector2 vec_div(Vector2 A, Vector2 B)**
-  - **Vector2 vec_mul(Vector2 A, Vector2 B)**
+  - **Vector2 vec_mul(Vector2 A,double scalar)**
+    - **Vector2 vec_dot(Vector2 A, Vector2 B)**
 
     *Returns a vector that is the result of basic math operations*
 
