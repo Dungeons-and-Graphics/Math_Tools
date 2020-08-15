@@ -58,11 +58,11 @@ Helper functions to calculate all sorts of things
 
     ###TODO
 
-  -[ ] Circle functions
+   - [ ] Circle functions
 
-  -[ ] Triangle functions
+   - [ ] Triangle functions
 
-  -[ ] 3D Vectors
+   - [ ] 3D Vectors
 
-  -[ ] Matrix operations
+   - [ ] Matrix operations
 
