@@ -4,51 +4,100 @@ Helper functions to calculate all sorts of things
 ## Overview
 
  ### Misc math functions (misc.h)
-  - **double to_radf(double angle)**
-  - **int to_rad(int angle)**
-  - **double to_degf(double angle)**
-  - **int to_deg(int angle)**
+  ```
+double to_radf(double angle);
+int to_rad(int angle);
+double to_degf(double angle);
+int to_deg(int angle);
+```
 
-    *Converts between radians and degrees*
-  - **double get_distancef(double x1, double y1, double x2, double y2)**
-  - **int get_distance(int x1, int y1, int x2, int y2)**
+   *Converts between radians and degrees*
 
-    *Returns the distance between two points*
+   ```
+  double get_distancef(double x1, double y1, double x2, double y2)
+  int get_distance(int x1, int y1, int x2, int y2)
+  ```
 
- ### 2DVectors (Vectors.h)
+  *Returns the distance between two points*
 
-  - **Vector2 vec_sub(Vector2 A, Vector2 B)**
-  - **Vector2 vec_add(Vector2 A, Vector2 B)**
-  - **Vector2 vec_div(Vector2 A, Vector2 B)**
-  - **Vector2 vec_mul(Vector2 A, Vector2 B)**
+ ### 2DVectors (vector2.h, vector2.c)
 
-    *Returns a vector that is the result of basic math operations*
+  *Returns a vector*
 
-  - **Vector2 vec_rot_deg(Vector2 vec, double rot_angle)**
-  - **Vector2 vec_rot_rad(Vector2 vec, double rot_angle)**
+ ```
+Vector2 vec_from_angle_deg(double angle, double magnitude);
+Vector2 vec_from_angle_rad(double angle, double magnitude);
+```
 
-    *Returns a Vector that is the result of a rotation by the given angle (in degrees or radians)*
+*Returns a vector that is the result og basic math operations*
 
-  - **Vector2 vec_invert(Vector2 vec)**
+```
+ Vector2 vec_sub(Vector2 a, Vector2 b);
+ Vector2 vec_add(Vector2 a, Vector2 b);
+ Vector2 vec_mult(Vector2 a, double scalar);
+ double vec_dot(Vector2 a, Vector2 b)
+ ```
 
-    *Returns a vector that is opposite to the one given*
+*Returns the angle between two vectors*
 
-  - **double vec_magnitude(Vector2 vec)**
+```
+double vec_angle_rad(Vector2 a, Vector2 b);
+double vec_angle_deg(Vector2 a, Vector2 b);
+ ```
 
-    *Returns the magnitude of a vector*
+*Returns a Vector that is the result of a rotation by the given angle (in degrees or radians)*
 
-  - **double vec_heading_deg(Vector2 vec)**
-  - **double vec_heading_rad(Vector2 vec)**
+```
+Vector2 vec_rot_deg(Vector2 vec, double rot_angle);
+Vector2 vec_rot_rad(Vector2 vec, double rot_angle);
+```
 
-    *Returns the angle of a vector relative to the x axis
+*Returns a vector that is opposite to the one given*
+```
+Vector2 vec_invert(Vector2 vec);
+```
 
-    ###TODO
+*Returns the magnitude of a vector*
+```
+double vec_magnitude(Vector2 vec);
+```
 
-  -[ ] Circle functions
+*Returns the angle of a vector relative to the x axis*
 
-  -[ ] Triangle functions
+```
+double vec_heading_deg(Vector2 vec);
+double vec_heading_rad(Vector2 vec);
 
-  -[ ] 3D Vectors
+double vec_heading360_deg(Vector2 vec);
+double vec_heading360_rad(Vector2 vec);
+```
 
-  -[x] Matrix operations
+	### Matrix operations (matrices.h, matrices.c)
+
+/*Basic matrix operations */
+```
+void mat_add(Matrix *a, Matrix b);
+void mat_sub(Matrix *a, Matrix b);
+Matrix mat_mult(Matrix a, Matrix b);
+```
+
+/* Multiply by a scalar number*/
+```
+void mat_scale(Matrix *a, double scalar);
+```
+
+/*Duplicates given matrix*/
+```
+Matrix mat_dup(Matrix mat);
+```
+
+    ### TODO
+
+   - [ ] Circle functions
+
+   - [ ] Triangle functions
+
+   - [ ] 3D Vectors
+
+   - [x] Matrix operations
 
