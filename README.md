@@ -74,19 +74,19 @@ double vec_heading360_rad(Vector2 vec);
 
 	### Matrix operations (matrices.h, matrices.c)
 
-/*Basic matrix operations */
+*Basic matrix operations*
 ```
 void mat_add(Matrix *a, Matrix b);
 void mat_sub(Matrix *a, Matrix b);
 Matrix mat_mult(Matrix a, Matrix b);
 ```
 
-/* Multiply by a scalar number*/
+*Multiply by a scalar number*
 ```
 void mat_scale(Matrix *a, double scalar);
 ```
 
-/*Duplicates given matrix*/
+*Duplicates given matrix*
 ```
 Matrix mat_dup(Matrix mat);
 ```
