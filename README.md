@@ -72,7 +72,7 @@ double vec_heading360_deg(Vector2 vec);
 double vec_heading360_rad(Vector2 vec);
 ```
 
-	### Matrix operations (matrices.h, matrices.c)
+### Matrix operations (matrices.h, matrices.c)
 
 *Basic matrix operations*
 ```
@@ -91,7 +91,7 @@ void mat_scale(Matrix *a, double scalar);
 Matrix mat_dup(Matrix mat);
 ```
 
-    ### TODO
+   ### TODO
 
    - [ ] Circle functions
 
