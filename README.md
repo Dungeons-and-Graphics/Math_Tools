@@ -50,5 +50,5 @@ Helper functions to calculate all sorts of things
 
   -[ ] 3D Vectors
 
-  -[ ] Matrix operations
+  -[x] Matrix operations
 

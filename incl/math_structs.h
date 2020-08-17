@@ -3,14 +3,23 @@
 
 typedef struct s_vect2
 {
-	int			x;
-	int			y;
+	double		x;
+	double		y;
 }				Vector2;
 
-typedef struct s_vect2f
+typedef struct s_vect3
 {
-	double			x;
-	double			y;
-}				Vector2f;
+	double		x;
+	double		y;
+	double		z;
+}				Vector3;
+
+typedef struct s_matrix
+{
+	int m;
+	int n;
+	double matrix[4][4]
+}				Matrix;
+
 
 #endif

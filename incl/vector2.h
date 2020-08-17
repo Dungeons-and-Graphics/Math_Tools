@@ -1,5 +1,5 @@
-#ifndef VECTOR_H
-# define VECTOR_H
+#ifndef VECTOR2_H
+# define VECTOR2_H
 #include "misc.h"
 
 /*Returns a vector */
@@ -11,7 +11,7 @@ Vector2 vec_sub(Vector2 a, Vector2 b);
 Vector2 vec_add(Vector2 a, Vector2 b);
 Vector2 vec_mult(Vector2 a, double scalar);
 
-double vec_dot(Vector2 a, Vector2 b);
+double vec_dot(Vector2 a, Vector2 b, double angle);
 
 /* Returns the angle between two vectors */
 double vec_angle_rad(Vector2 a, Vector2 b);

@@ -1,4 +1,4 @@
-#include "vector.h"
+#include "vector2.h"
 
 static double convert_180(double angle)
 {
@@ -36,7 +36,7 @@ Vector2 vec_sub(Vector2 a, Vector2 b)
 	vec.x = a.x - b.x;
 	vec.y = a.y - b.y;
 
-	return vec
+	return vec;
 }
 
 Vector2 vec_add(Vector2 a, Vector2 b)
@@ -46,7 +46,7 @@ Vector2 vec_add(Vector2 a, Vector2 b)
 	vec.x = a.x + b.x;
 	vec.y = a.y + b.y;
 
-	return vec
+	return vec;
 }
 
 Vector2 vec_mul(Vector2 vec,int scalar)
@@ -100,12 +100,12 @@ Vector2 vec_rot_deg(Vector2 vec, double rot_angle)
 	while (current_angle < 0)
 		current_angle += 360;
 
-	return vec_from_angle_deg(current_angle);
+	return vec_from_angle_deg(current_angle, vec_magnitude(vec));
 }
 
 Vector2 vec_rot_rad(Vector2 vec, double rot_angle)
 {
-	return vec_rot_deg(vec, to_degf(angle));
+	return vec_rot_deg(vec, to_degf(rot_angle));
 }
 
 /*Returns a vector that is opposite to the one given*/
