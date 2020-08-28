@@ -100,4 +100,6 @@ Matrix mat_dup(Matrix mat);
    - [ ] 3D Vectors
 
    - [x] Matrix operations
+   
+   - [ ] Curves
 
