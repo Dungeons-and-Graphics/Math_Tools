@@ -1,11 +1,8 @@
-#include "misc.h"
+#include "MT.h"
 
-double		to_rad(int angle)
-{
-	return (int)to_radf(angle);
-}
+double		MT_ToRad(int angle){return (int)to_radf(angle);}
 
-double	to_radf(double angle)
+double	MT_ToRadf(double angle)
 {
 	double result;
 
@@ -16,7 +13,7 @@ double	to_radf(double angle)
 }
 
 /* Converts radians to degrees*/
-double	to_degf(double angle)
+double	MT_ToDegf(double angle)
 {
 	double result;
 
@@ -25,7 +22,7 @@ double	to_degf(double angle)
 
 	return result;
 }
-int		to_deg(int angle)
+int		MT_ToDeg(int angle)
 {
 	int result;
 
@@ -36,7 +33,7 @@ int		to_deg(int angle)
 }
 
 /* Returns the square of the distance between two point */
-double	get_distancef(double x1, double y1, double x2, double y2)
+double	MT_GetDistancef(double x1, double y1, double x2, double y2)
 {
 	double	d_x, d_y;
 
@@ -45,7 +42,7 @@ double	get_distancef(double x1, double y1, double x2, double y2)
 	return ((d_x * d_x) + (d_y * d_y));
 }
 
-int		get_distance(int x1, int y1, int x2, int y2)
+int		MT_GetDistance(int x1, int y1, int x2, int y2)
 {
 	int	d_x, d_y;
 

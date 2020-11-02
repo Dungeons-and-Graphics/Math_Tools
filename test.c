@@ -1,4 +1,4 @@
-#include "math_structs.h"
+#include "MT.h"
 #include <stdio.h>
 
 int main()

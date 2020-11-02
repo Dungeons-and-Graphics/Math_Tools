@@ -1,6 +1,6 @@
-#include "vector2.h"
+#include "MT.h"
 
-static double convert_180(double angle)
+static double _convert_180(double angle)
 {
 	if (angle < 0)
 		angle = (angle * -1) + 180;
@@ -8,9 +8,9 @@ static double convert_180(double angle)
 }
 
 /*Returns a vector */
-Vector2 vec_from_angle_deg(double angle, double magnitude)
+MT_Vector2 MT_V2FromAngle_Deg(double angle, double magnitude)
 {
-	Vector2 vec;
+	MT_Vector2 vec;
 
 	vec.x = cos(to_radf(angle)) * magnitude;
 	vec.y = sin(to_radf(angle)) * magnitude;
@@ -18,9 +18,9 @@ Vector2 vec_from_angle_deg(double angle, double magnitude)
 	return vec;
 }
 
-Vector2 vec_from_angle_rad(double angle, double magnitude)
+MT_Vector2 MT_V2FromAngle_Rad(double angle, double magnitude)
 {
-	Vector2 vec;
+	MT_Vector2 vec;
 
 	vec.x = cos(angle) * magnitude;
 	vec.y = sin(angle) * magnitude;
@@ -29,9 +29,9 @@ Vector2 vec_from_angle_rad(double angle, double magnitude)
 }
 
 /*Returns a vector that is the result og basic math operations*/
-Vector2 vec_sub(Vector2 a, Vector2 b)
+MT_Vector2 MT_V2Sub(MT_Vector2 a, MT_Vector2 b)
 {
-	Vector2 vec;
+	MT_Vector2 vec;
 
 	vec.x = a.x - b.x;
 	vec.y = a.y - b.y;
@@ -39,9 +39,9 @@ Vector2 vec_sub(Vector2 a, Vector2 b)
 	return vec;
 }
 
-Vector2 vec_add(Vector2 a, Vector2 b)
+MT_Vector2 MT_V2Add(MT_Vector2 a, MT_Vector2 b)
 {
-	Vector2 vec;
+	MT_Vector2 vec;
 
 	vec.x = a.x + b.x;
 	vec.y = a.y + b.y;
@@ -49,9 +49,9 @@ Vector2 vec_add(Vector2 a, Vector2 b)
 	return vec;
 }
 
-Vector2 vec_mul(Vector2 vec,int scalar)
+MT_Vector2 MT_V2Mult(MT_Vector2 vec,int scalar)
 {
-	Vector2 new_vec;
+	MT_Vector2 new_vec;
 
 	new_vec.x = vec.x * scalar;
 	new_vec.y = vec.y * scalar;
@@ -59,7 +59,7 @@ Vector2 vec_mul(Vector2 vec,int scalar)
 	return new_vec;
 }
 
-double vec_dot(Vector2 a, Vector2 b, double angle)
+double MT_V2Dot(MT_Vector2 a, MT_Vector2 b, double angle)
 {
 	double mag_a, mag_b, result;
 
@@ -70,7 +70,7 @@ double vec_dot(Vector2 a, Vector2 b, double angle)
 }
 
 /* Returns the angle between two vectors */
-double vec_angle_rad(Vector2 a, Vector2 b)
+double MT_V2Angle_Rad(MT_Vector2 a, MT_Vector2 b)
 {
 	double angle, m_a, m_b;
 
@@ -82,15 +82,15 @@ double vec_angle_rad(Vector2 a, Vector2 b)
 	return acos(angle);
 }
 
-double vec_angle_deg(Vector2 a, Vector2 b)
+double MT_V2Angle_Deg(MT_Vector2 a, MT_Vector2 b)
 {
-	return (to_degf(vec_angle_rad(a, b)));
+	return (MT_ToDegf(MT_V2Angle_Rad(a, b)));
 }
 
 /*Returns a Vector that is the result of a rotation by the given angle (in degrees or radians)*/
-Vector2 vec_rot_deg(Vector2 vec, double rot_angle)
+MT_Vector2 MT_V2Rot_Deg(MT_Vector2 vec, double rot_angle)
 {
-	Vector2 new_vec;
+	MT_Vector2 new_vec;
 	double current_angle;
 
 	current_angle = vec_heading360_deg(vec);
@@ -100,18 +100,17 @@ Vector2 vec_rot_deg(Vector2 vec, double rot_angle)
 	while (current_angle < 0)
 		current_angle += 360;
 
-	return vec_from_angle_deg(current_angle, vec_magnitude(vec));
+	return MT_V2FromAngle_Deg(current_angle, vec_magnitude(vec));
 }
 
-Vector2 vec_rot_rad(Vector2 vec, double rot_angle)
-{
-	return vec_rot_deg(vec, to_degf(rot_angle));
+MT_Vector2 vec_rot_rad(MT_Vector2 vec, double rot_angle){
+	return MT_V2Rot_Deg(vec, MT_ToDegf(rot_angle));
 }
 
 /*Returns a vector that is opposite to the one given*/
-Vector2 vec_invert(Vector2 vec)
+MT_Vector2 MT_V2Invert(MT_Vector2 vec)
 {
-	Vector2 new_vec;
+	MT_Vector2 new_vec;
 
 	new_vec.x = vec.x * -1;
 	new_vec.y =	vec.y * -1;
@@ -119,26 +118,26 @@ Vector2 vec_invert(Vector2 vec)
 }
 
 /*Returns the square of the magnitude of a vector*/
-double vec_magnitude(Vector2 vec)
+double MT_V2Mag(MT_Vector2 vec)
 {
-	return (get_distancef(0, vec.x, 0, vec.y));
+	return (MT_GetDistancef(0, vec.x, 0, vec.y));
 }
 
 /*Returns the angle of a vector relative to the x axis */
-double vec_heading180_deg(Vector2 vec){ return to_degf(atan2(vec.y, vec.x));}
-double vec_heading180_rad(Vector2 vec){ return atan2(vec.y, vec.x); }
+double  MT_V2Heading180_Deg(MT_Vector2 vec){ return MT_ToDegf(atan2(vec.y, vec.x));}
+double  MT_V2Heading180_Rad(MT_Vector2 vec){ return atan2(vec.y, vec.x); }
 
 
-double vec_heading360_deg(Vector2 vec)
+double  MT_V2Heading360_Deg(MT_Vector2 vec)
 {
 	double angle;
 
-	angle = to_degf(atan2(vec.y, vec.x));
+	angle = MT_ToDegf(atan2(vec.y, vec.x));
 
-	return convert_180(angle);
+	return _convert_180(angle);
 }
 
-double vec_heading360_rad(Vector2 vec)
+double  MT_V2Heading360_Rad(MT_Vector2 vec)
 {
-	return to_radf(vec_heading360_deg(vec));
+	return MT_ToRadf(MT_V2Heading180_Deg(vec));
 }
