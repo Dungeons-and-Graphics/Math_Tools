@@ -98,8 +98,6 @@ Matrix mat_dup(Matrix mat);
    - [ ] Triangle functions
 
    - [ ] 3D Vectors
-
-   - [x] Matrix operations
    
    - [ ] Curves
 
