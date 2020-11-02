@@ -4,7 +4,7 @@ Helper functions to calculate all sorts of things
 ## Overview
 
  ### Misc math functions (misc.h)
-  ```
+```
 double to_radf(double angle);
 int to_rad(int angle);
 double to_degf(double angle);
