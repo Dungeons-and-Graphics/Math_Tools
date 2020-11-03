@@ -50,3 +50,47 @@ int		MT_GetDistance(int x1, int y1, int x2, int y2)
 	d_y = y2 - y1;
 	return ((d_x * d_x) + (d_y * d_y));
 }
+
+int		MT_ScaleNumber(int input, MT_Vector2 old_scale, MT_Vector2 new_scale)
+{
+	int		result;
+	int		range;
+	double	tmp;
+
+	range = (old_scale.x - old_scale.y);
+
+	tmp = input - old_scale.x;
+	tmp /= range;
+	tmp *= (new_scale.x - new_scale.y);
+	result = tmp + new_scale.y;
+
+	return result;
+}
+
+int		MT_ScaleNumberf(int input, MT_Vector2 old_scale, MT_Vector2 new_scale)
+{
+	double	result;
+	double	range;
+	double	tmp;
+
+	range = (old_scale.x - old_scale.y);
+
+	tmp = input - old_scale.x;
+	tmp /= range;
+	tmp *= (new_scale.x - new_scale.y);
+	result = tmp + new_scale.y;
+
+	return result;
+}
+
+int		MT_GCM(int a, int b)
+{
+	int tmp;
+
+	if (a == 0)
+		return b;
+	if (b == 0 || b == a)
+		return a;
+
+	//Figure out the binary algorithm here
+}
