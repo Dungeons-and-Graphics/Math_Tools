@@ -94,3 +94,13 @@ int		MT_GCM(int a, int b)
 
 	//Figure out the binary algorithm here
 }
+
+MT_circle MT_CircleInit(int size, MT_Vector2 origin)
+{
+	MT_circle circle;
+
+	circle.origin = origin;
+	circle.size = size;
+
+	return circle;
+}

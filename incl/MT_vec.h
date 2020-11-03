@@ -7,17 +7,17 @@
 MT_Vector2 MT_V2FromAngle_Deg(double angle, double magnitude);
 MT_Vector2 MT_V2FromAngle_Rad(double angle, double magnitude);
 
-MT_Vector2 MT_V3FromAngle_Deg(double angle, double magnitude);
-MT_Vector2 MT_V3FromAngle_Rad(double angle, double magnitude);
+MT_Vector3 MT_V3FromAngle_Deg(double angle, double magnitude);
+MT_Vector3 MT_V3FromAngle_Rad(double angle, double magnitude);
 
 /*Returns a vector that is the result og basic math operations*/
 MT_Vector2 MT_V2Sub(MT_Vector2 a, MT_Vector2 b);
 MT_Vector2 MT_V2Add(MT_Vector2 a, MT_Vector2 b);
 MT_Vector2 MT_V2Mult(MT_Vector2 a, double scalar);
 
-MT_Vector2 MT_V3Sub(MT_Vector3 a, MT_Vector3 b);
-MT_Vector2 MT_V3Add(MT_Vector3 a, MT_Vector3 b);
-MT_Vector2 MT_V3Mult(MT_Vector3 a, double scalar);
+MT_Vector3 MT_V3Sub(MT_Vector3 a, MT_Vector3 b);
+MT_Vector3 MT_V3Add(MT_Vector3 a, MT_Vector3 b);
+MT_Vector3 MT_V3Mult(MT_Vector3 a, double scalar);
 
 double MT_V2Dot(MT_Vector2 a, MT_Vector2 b, double angle);
 double MT_V3Dot(MT_Vector3 a, MT_Vector3 b, double angle);

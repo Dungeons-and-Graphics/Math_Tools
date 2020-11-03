@@ -38,4 +38,6 @@ int 	MT_GCD(int a, int b);
 
 int 	MT_LCM(int a, int b);
 
+MT_circle MT_CircleInit(int size, MT_Vector2 origin);
+
 #endif
