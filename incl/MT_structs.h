@@ -20,12 +20,12 @@ typedef struct	s_matrix
 {
 	int m;
 	int n;
-	double matrix[4][4]
+	double matrix[4][4];
 }				MT_Matrix;
 
 typedef struct s_circle
 {
-	MT_Vector3 	origin;
+	MT_Vector2 	origin;
 	int			size;
 }				MT_circle;
 

@@ -1,6 +1,6 @@
 #include "MT.h"
 
-double		MT_ToRad(int angle){return (int)to_radf(angle);}
+int		MT_ToRad(int angle){return (int)MT_ToRadf(angle);}
 
 double	MT_ToRadf(double angle)
 {
@@ -67,7 +67,7 @@ int		MT_ScaleNumber(int input, MT_Vector2 old_scale, MT_Vector2 new_scale)
 	return result;
 }
 
-int		MT_ScaleNumberf(int input, MT_Vector2 old_scale, MT_Vector2 new_scale)
+double		MT_ScaleNumberf(double input, MT_Vector2 old_scale, MT_Vector2 new_scale)
 {
 	double	result;
 	double	range;
@@ -103,4 +103,26 @@ MT_circle MT_CircleInit(int size, MT_Vector2 origin)
 	circle.size = size;
 
 	return circle;
+}
+
+int MT_GCD(int m, int n)
+{
+	int tmp;
+
+	if (m > n)
+	{
+		tmp = m;
+		m = n;
+		n = tmp;
+	}
+
+	while (1)
+	{
+		m = m % n;
+		if (!m)
+			return (n < 0) ? (-n) : (n);
+		n = n % m;
+		if (!n)
+			return (m < 0) ? (-m) : (m);
+	}
 }

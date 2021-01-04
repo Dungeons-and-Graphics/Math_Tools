@@ -6,13 +6,16 @@
 # include <math.h>
 # include "MT_structs.h"
 
+# ifndef M_PI
+#  define M_PI (3.14159265358979323846)
+# endif
 /* Converts degrees to radians*/
-double	MT_ToRad(int angle);
+int		MT_ToRad(int angle);
 double	MT_ToRadf(double angle);
 
 /* Converts radians to degrees*/
-double	MT_ToDegf(double angle);
 int		MT_ToDeg(int angle);
+double	MT_ToDegf(double angle);
 
 /* Returns the square of the distance between two point */
 double	MT_GetDistancef(double x1, double y1, double x2, double y2);
@@ -34,7 +37,7 @@ double	MT_ScaleNumberf(double input, MT_Vector2 old_scale, MT_Vector2 new_scale)
 */
 int		MT_ScaleNumber(int input, MT_Vector2 old_scale, MT_Vector2 new_scale);
 
-int 	MT_GCD(int a, int b);
+int		MT_GCD(int m, int n);
 
 int 	MT_LCM(int a, int b);
 

@@ -1,6 +1,6 @@
-#include "MT.h"
+#include "MT_vec.h"
 
-static double _convert_180(double angle)
+static double convert_180(double angle)
 {
 	if (angle < 0)
 		angle = (angle * -1) + 180;
@@ -12,8 +12,8 @@ MT_Vector2 MT_V2FromAngle_Deg(double angle, double magnitude)
 {
 	MT_Vector2 vec;
 
-	vec.x = cos(to_radf(angle)) * magnitude;
-	vec.y = sin(to_radf(angle)) * magnitude;
+	vec.x = cos(MT_ToRadf(angle)) * magnitude;
+	vec.y = sin(MT_ToRadf(angle)) * magnitude;
 
 	return vec;
 }
@@ -49,7 +49,7 @@ MT_Vector2 MT_V2Add(MT_Vector2 a, MT_Vector2 b)
 	return vec;
 }
 
-MT_Vector2 MT_V2Mult(MT_Vector2 vec,int scalar)
+MT_Vector2 MT_V2Mult(MT_Vector2 vec, double scalar)
 {
 	MT_Vector2 new_vec;
 
@@ -63,8 +63,8 @@ double MT_V2Dot(MT_Vector2 a, MT_Vector2 b, double angle)
 {
 	double mag_a, mag_b, result;
 
-	mag_a = sqrt(vec_magnitude(a));
-	mag_b = sqrt(vec_magnitude(b));
+	mag_a = sqrt(MT_V2Mag(a));
+	mag_b = sqrt(MT_V2Mag(b));
 	result = mag_a * mag_b;
 	return (result * cos(angle));
 }
@@ -74,8 +74,8 @@ double MT_V2Angle_Rad(MT_Vector2 a, MT_Vector2 b)
 {
 	double angle, m_a, m_b;
 
-	m_a = sqrt(vec_magnitude(a));
-	m_b = sqrt(vec_magnitude(b));
+	m_a = sqrt(MT_V2Mag(a));
+	m_b = sqrt(MT_V2Mag(b));
 	angle = (a.x * a.y) + (b.x * b.y);
 	angle /= (m_a * m_b);
 
@@ -93,17 +93,17 @@ MT_Vector2 MT_V2Rot_Deg(MT_Vector2 vec, double rot_angle)
 	MT_Vector2 new_vec;
 	double current_angle;
 
-	current_angle = vec_heading360_deg(vec);
+	current_angle =  MT_V2Heading360_Deg(vec);
 	current_angle += rot_angle;
 	while (current_angle > 360)
 		current_angle -= 360;
 	while (current_angle < 0)
 		current_angle += 360;
 
-	return MT_V2FromAngle_Deg(current_angle, vec_magnitude(vec));
+	return MT_V2FromAngle_Deg(current_angle, MT_V2Mag(vec));
 }
 
-MT_Vector2 vec_rot_rad(MT_Vector2 vec, double rot_angle){
+MT_Vector2 MT_V2Rot_Rad(MT_Vector2 vec, double rot_angle){
 	return MT_V2Rot_Deg(vec, MT_ToDegf(rot_angle));
 }
 
@@ -134,7 +134,7 @@ double  MT_V2Heading360_Deg(MT_Vector2 vec)
 
 	angle = MT_ToDegf(atan2(vec.y, vec.x));
 
-	return _convert_180(angle);
+	return convert_180(angle);
 }
 
 double  MT_V2Heading360_Rad(MT_Vector2 vec)

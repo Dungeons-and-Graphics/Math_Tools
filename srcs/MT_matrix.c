@@ -1,6 +1,6 @@
 #include "MT.h"
 
-MT_MatrixInit(int m, int n, void *data, int(*func)(void *, int , int))
+MT_Matrix MT_MatrixInit(int m, int n, void *data, int(*func)(void *, int , int))
 {
 	MT_Matrix matrix;
 
@@ -13,13 +13,13 @@ MT_MatrixInit(int m, int n, void *data, int(*func)(void *, int , int))
 }
 
 /*Basic matrix operations */
-void MT_MatrixAdd(Matrix *a, Matrix b)
+void MT_MatrixAdd(MT_Matrix *a, MT_Matrix b)
 {
 	for (int m = 0; m < a->m; m++)
 		for (int n = 0; n < a->n; n++)
 			a->matrix[m][n] = a->matrix[m][n] + b.matrix[m][n];
 }
-void MT_MatrixSub(Matrix *a, Matrix b)
+void MT_MatrixSub(MT_Matrix *a, MT_Matrix b)
 {
 	for (int m = 0; m < a->m; m++)
 		for (int n = 0; n < a->n; n++)
@@ -27,16 +27,16 @@ void MT_MatrixSub(Matrix *a, Matrix b)
 }
 
 /* Multiply by a scalar number*/
-void MT_MatrixScale(Matrix *a, double scalar)
+void MT_MatrixScale(MT_Matrix *a, double scalar)
 {
 	for (int m = 0; m < a->m; m++)
 		for (int n = 0; n < a->n; n++)
 			a->matrix[m][n] *= scalar;
 }
 
-Matrix MT_MatrixMult(Matrix a, Matrix b)
+MT_Matrix MT_MatrixMult(MT_Matrix a, MT_Matrix b)
 {
-	Matrix result;
+	MT_Matrix result;
 	double dot_p;
 
 	result.m = a.m;
@@ -55,9 +55,9 @@ Matrix MT_MatrixMult(Matrix a, Matrix b)
 	return result;
 }
 
-Matrix MT_MatrixDup(Matrix mat)
+MT_Matrix MT_MatrixDup(MT_Matrix mat)
 {
-	Matrix new = mat;
+	MT_Matrix new = mat;
 
 	return mat;
 }
