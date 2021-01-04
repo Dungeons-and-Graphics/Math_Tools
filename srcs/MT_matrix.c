@@ -59,5 +59,5 @@ MT_Matrix MT_MatrixDup(MT_Matrix mat)
 {
 	MT_Matrix new = mat;
 
-	return mat;
+	return new;
 }

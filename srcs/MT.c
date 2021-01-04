@@ -83,17 +83,17 @@ double		MT_ScaleNumberf(double input, MT_Vector2 old_scale, MT_Vector2 new_scale
 	return result;
 }
 
-int		MT_GCM(int a, int b)
-{
-	int tmp;
+// int		MT_GCM(int a, int b)
+// {
+// 	int tmp;
 
-	if (a == 0)
-		return b;
-	if (b == 0 || b == a)
-		return a;
+// 	if (a == 0)
+// 		return b;
+// 	if (b == 0 || b == a)
+// 		return a;
 
-	//Figure out the binary algorithm here
-}
+// 	//Figure out the binary algorithm here
+// }
 
 MT_circle MT_CircleInit(int size, MT_Vector2 origin)
 {

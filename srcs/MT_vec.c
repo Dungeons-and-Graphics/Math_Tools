@@ -90,7 +90,6 @@ double MT_V2Angle_Deg(MT_Vector2 a, MT_Vector2 b)
 /*Returns a Vector that is the result of a rotation by the given angle (in degrees or radians)*/
 MT_Vector2 MT_V2Rot_Deg(MT_Vector2 vec, double rot_angle)
 {
-	MT_Vector2 new_vec;
 	double current_angle;
 
 	current_angle =  MT_V2Heading360_Deg(vec);
