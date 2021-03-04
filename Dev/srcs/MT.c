@@ -83,6 +83,18 @@ double		MT_ScaleNumberf(double input, MT_Vector2 old_scale, MT_Vector2 new_scale
 	return result;
 }
 
+double	MT_GetDistance3D(MT_Vector3 A, MT_Vector3 B)
+{
+	double x;
+	double y;
+	double z;
+
+	x = (B.x - A.x) * (B.x - A.x);
+	y = (B.y - A.y) * (B.y - A.y);
+	z = (B.z - A.z) * (B.z - A.z);
+
+	return sqrt(x + y + z);
+}
 // int		MT_GCM(int a, int b)
 // {
 // 	int tmp;
