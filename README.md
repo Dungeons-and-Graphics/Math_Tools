@@ -17,4 +17,11 @@ Helper functions to calculate all sorts of things
 
 Should vector 2 be vector3 with  z = 0? It would reduce the number of functions by half but would be less comprehensible. Maybe just call it vector?
 
-Archive doesn't seem to be working atm.
+# Usage
+
+```
+git clone https://github.com/FlavorlessQuark/Math_Tools/Release
+copy the contents of the includes folder into your project's include directory
+compile your project  with -L -l libMT.a
+```
+za
