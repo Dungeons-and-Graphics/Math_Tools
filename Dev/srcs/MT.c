@@ -73,12 +73,12 @@ double		MT_ScaleNumberf(double input, MT_Vector2 old_scale, MT_Vector2 new_scale
 	double	range;
 	double	tmp;
 
-	range = (old_scale.x - old_scale.y);
+	range = (old_scale.y - old_scale.x);
 
 	tmp = input - old_scale.x;
 	tmp /= range;
-	tmp *= (new_scale.x - new_scale.y);
-	result = tmp + new_scale.y;
+	tmp *= (new_scale.y - new_scale.x);
+	result = tmp + new_scale.x;
 
 	return result;
 }
